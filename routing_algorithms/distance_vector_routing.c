@@ -25,7 +25,10 @@ void main()
         {
             // Distance of the node to itself is 0, else accept distance
             if(i == j)
+            {
                 node[i].distance[j] = 0;
+                node[j].distance[i] = 0;
+            }
             else if(j < i)
                 continue;
             else
