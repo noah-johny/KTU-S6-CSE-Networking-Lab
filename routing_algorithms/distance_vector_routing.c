@@ -19,7 +19,6 @@ void main()
     int i, j, k, value;
     
     // Accept distance between all nodes to each other
-    printf("\nEnter the distance between routers:\n");
     for(i = 0; i < n; i++)
     {
         for(j = 0; j < n; j++)
@@ -63,6 +62,7 @@ void main()
                 if(node[i].distance[j] > node[i].distance[k] + node[k].distance[j])
                 {
                     node[i].distance[j] = node[i].distance[k] + node[k].distance[j];
+                    node[j].distance[i] = node[i].distance[j];
                     
                     // Reassign first node's adjacent node index with the index of intermediate node
                     node[i].adjacent[j] = k;
